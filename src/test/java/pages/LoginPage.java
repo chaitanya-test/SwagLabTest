@@ -10,7 +10,7 @@ import utils.LoggerUtils;
 
 public class LoginPage {
 
-	private Logger log = LoggerUtils.getLogger(LoginPage.class);
+private Logger log = LoggerUtils.getLogger(LoginPage.class);
 
 private WebDriver driver;
 

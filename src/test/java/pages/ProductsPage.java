@@ -3,17 +3,11 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
-
 import java.util.List;
-
-
 
 public class ProductsPage {
 
-
 	private WebDriver driver;
-
 	private By inventoryItem = By.className("inventory_item");
 	private By addToCartBtn = By.cssSelector("button.btn_inventory");
 	private By cartBadge = By.className("shopping_cart_badge");

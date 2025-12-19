@@ -26,10 +26,11 @@ public class PurchaseFlowTest extends BaseTest {
 
         cart.clickCheckout();
         CheckoutPage checkout = new CheckoutPage(driver);
-        checkout.enterFirstName("John");
-        checkout.enterLastName("Doe");
-        checkout.enterPostalCode("12345");
-        Thread.sleep(5000);
+        checkout.enterFirstName(ConfigReader.getProperty("firstname"));
+        checkout.enterLastName(ConfigReader.getProperty("lastname"));
+        checkout.enterPostalCode(ConfigReader.getProperty("pincode"));
+        
+       
         checkout.clickContinue();
         System.out.println("Done adding to cart");
 
