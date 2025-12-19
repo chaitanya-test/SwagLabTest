@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+
+    <Appenders>
+
+        <!-- Console Logging -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{dd-MM-yyyy HH:mm:ss} [%t] %-5level %c - %msg%n"/>
+        </Console>
+
+        <!-- File Logging -->
+        <RollingFile name="FileLogger"
+                     fileName="logs/automation.log"
+                     filePattern="logs/automation-%d{dd-MM-yyyy}.log">
+            <PatternLayout>
+                <Pattern>%d{dd-MM-yyyy HH:mm:ss} %-5level %c - %msg%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1"/>
+            </Policies>
+        </RollingFile>
+
+    </Appenders>
+
+    <Loggers>
+
+        <!-- Framework logging -->
+        <Logger name="com.yourcompany.framework" level="debug" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="FileLogger"/>
+        </Logger>
+
+        <!-- Root Logger -->
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="FileLogger"/>
+        </Root>
+
+    </Loggers>
+
+</Configuration>
